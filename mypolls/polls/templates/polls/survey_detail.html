@@ -1,0 +1,17 @@
+<!-- polls/templates/polls/survey_detail.html -->
+<form method="post" action="{% url 'survey_detail' survey.id %}">
+    {% csrf_token %}
+    <h2>{{ survey.title }}</h2>
+    {% for question in questions %}
+        <fieldset>
+            <legend>{{ question.text }}</legend>
+            {% for choice in question.choice_set.all %}
+                <label>
+                    <input type="radio" name="question_{{ question.id }}" value="{{ choice.id }}">
+                    {{ choice.text }}
+                </label><br>
+            {% endfor %}
+        </fieldset>
+    {% endfor %}
+    <button type="submit">Submit</button>
+</form>
