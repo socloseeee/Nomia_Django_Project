@@ -23,9 +23,19 @@
 
 Результат:
 
+## Опрос
+
 ![assets/img.png](assets/img.png)
 
+## Сообщение после завершения опроса:
+
 ![assets/img_1.png](assets/img_1.png)
+
+## Статистика:
+
+![img.png](assets/img4.png)
+
+## Генерация и редактирование опросов в админке
 
 ![assets/img_2.png](assets/img_2.png)
 

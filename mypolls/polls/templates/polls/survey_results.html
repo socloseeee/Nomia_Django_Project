@@ -1,0 +1,27 @@
+<!-- polls/templates/polls/survey_results.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Results</title>
+</head>
+<body>
+    <h1>Survey Results for Survey {{ survey_id }}</h1>
+
+    <p>Total Participants: {{ total_participants }}</p>
+
+    <h2>Question Statistics:</h2>
+    {% for question_stat in grouped_question_statistics %}
+        <p>
+            {{ question_stat.question_rank }}-rank Question ({{ question_stat.question_text }}) ({{ question_stat.participants_count }}% answered):
+            <ul>
+                {% for choice_stat in question_stat.choices %}
+                    <li>
+                        Choice {{ choice_stat.choice_id }} ({{ choice_stat.choice_percentage }}%):
+                        {{ choice_stat.choice_count }} participants selected "{{ choice_stat.choice_text }}"
+                    </li>
+                {% endfor %}
+            </ul>
+        </p>
+    {% endfor %}
+</body>
+</html>

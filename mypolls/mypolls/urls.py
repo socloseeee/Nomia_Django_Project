@@ -16,12 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from polls.views import survey_detail
-
-from polls.views import thank_you
+from polls.views import survey_detail, thank_you, survey_results
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('survey/<int:survey_id>/', survey_detail, name='survey_detail'),
+    path('survey/<int:survey_id>/results/', survey_results, name='survey_results'),
     path('thank-you/', thank_you, name='thank_you')
 ]
