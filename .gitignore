@@ -1,2 +1,3 @@
 mypolls/db.sqlite3
 mypolls/polls/migrations
+mypolls/.env
